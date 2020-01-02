@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
-import { List, Button } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
+
+const ShippingOption = { ground: 1, priority: 2 }
 
 export default class stepFive extends Component {
-	nextStep = e => {
-		e.preventDefault()
-		this.props.nextStep()
-	}
-
-	prevStep = e => {
-		e.preventDefault()
-		this.props.prevStep()
-	}
-
 	render() {
-		const { from, to, weight, shippingOption } = this.props.wizardContext
+		const { from, to, Weight, shippingOption } = this.props.wizardContext
 		const shippingRate = 0.4,
-			shippingCost = weight * shippingRate * 1.5
+			shippingCost =
+				Weight *
+				shippingRate *
+				(shippingOption === ShippingOption.ground ? 1 : 1.5)
+		debugger
 		return (
 			<>
 				<h1>Confirm your Details</h1>
@@ -68,9 +64,6 @@ export default class stepFive extends Component {
 						<List.Content>{shippingCost}</List.Content>
 					</List.Item>
 				</List>
-
-				<Button onClick={this.nextStep}>Next</Button>
-				<Button onClick={this.prevStep}>Confirm</Button>
 			</>
 		)
 	}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'semantic-ui-react'
 
-const shippingOptions = { ground: 1, Priority: 2 }
+const ShippingOption = { ground: 1, priority: 2 }
 
 export default class stepFour extends Component {
 	nextStep = e => {
@@ -17,17 +17,16 @@ export default class stepFour extends Component {
 	render() {
 		return (
 			<Form>
-				<h1>Enter the sender's address</h1>
-				<Form.Select
-					fluid
-					label="Shipping Options"
-					options={shippingOptions}
-					placeholder="Shipping Options"
+				<h1>Shipping Options</h1>
+				<select
 					onChange={this.props.handleChange('shippingOption')}
 					data-step-type="shippingOption"
-				/>
+				>
+					<option value={ShippingOption.ground}>Ground</option>
+					<option value={ShippingOption.priority}>Priority</option>
+				</select>
 				<Button onClick={this.prevStep}>Prev</Button>
-				<Button onClick={this.nextStep}>Next</Button>
+				<Button onClick={this.nextStep}>Confirm</Button>
 			</Form>
 		)
 	}

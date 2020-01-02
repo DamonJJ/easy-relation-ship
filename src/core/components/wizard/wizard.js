@@ -44,16 +44,24 @@ export default class wizard extends Component {
 
 	handleChange = input => event => {
 		const stepType = event.target.getAttribute('data-step-type')
-
-		this.setState({
-			wizardContext: {
-				...this.state.wizardContext,
-				[stepType]: {
-					...this.state.wizardContext[stepType],
+		if (stepType === 'shippingOption' || stepType === 'weight') {
+			this.setState({
+				wizardContext: {
+					...this.state.wizardContext,
 					[input]: event.target.value
 				}
-			}
-		})
+			})
+		} else {
+			this.setState({
+				wizardContext: {
+					...this.state.wizardContext,
+					[stepType]: {
+						...this.state.wizardContext[stepType],
+						[input]: event.target.value
+					}
+				}
+			})
+		}
 	}
 
 	render() {
