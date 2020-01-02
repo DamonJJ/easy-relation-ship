@@ -1,3 +1,11 @@
+I want to thank you for your time. I am highly excited about working for your company. I have heard great things about being with Publicis Sapient and think we would be ideal.
+
+I used Semantic UI React to style the app to save some time but I want to let you know I am quite capable with CSS and familar with SASS and such things as Flexbox and CSS Grid. I also have experience with Styled Components. 
+
+The project isn't quite as far as I wanted to get in the limited time I had with my current full time job that ends soon. That being said I am proud of the work and how far along it is.The task was very fun and I could complete it further if you wish.
+
+Once again I highly appreciate your time and look forward to talking in an interview and getting to know you all.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
